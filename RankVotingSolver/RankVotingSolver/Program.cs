@@ -11,43 +11,40 @@ namespace RankVotingSolver
         {
             var solution = new List<string>
              {
-                "Shubham",
-                "Sammie",
-                "Rebecca",
-                "Chris",
-                "Joey",
-                "Miranda",
-                "Mercedeze"
+               "Joey",
+               "Shubham",
+               "Sammie",
+               "Chris",
+               "Rebecca",
+               "Ed"
             };
 
             var rating = new Ratings();
             rating.Rankings.Add(
             new Ranking
             {
-                Id = "Shubham",
+                Id = "Ed",
                 Ranks = new List<Element> //shubham
                 {
                     new Element{Value= "Joey", IsFact =false},
-                    new Element{Value= "Rebecca", IsFact =false},
+                    new Element{Value= "Chris", IsFact =true},
+                    new Element{Value= "Shubham", IsFact =false},
                     new Element{Value= "Sammie", IsFact =true},
-                    new Element{Value= "Mercedeze", IsFact =true},
-                    new Element{Value= "Miranda", IsFact =false},
-                    new Element{Value= "Chris", IsFact =true}
+                    new Element{Value= "Ed", IsFact =false}
                 }
             });
 
             rating.Rankings.Add(
             new Ranking
             {
-                Id = "Miranda",
-                Ranks = new List<Element>
+                Id = "Shubham",
+                Ranks = new List<Element> //shubham
                 {
-                    new Element{Value= "Joey", IsFact =true},
-                    new Element{Value= "Shubham", IsFact =false},
-                    new Element{Value= "Sammie", IsFact =true},
-                    new Element{Value= "Rebecca", IsFact =false},
-                    new Element{Value= "Chris", IsFact =false},
-                    new Element{Value= "Mercedeze", IsFact =false},
+                    new Element{ Value= "Joey", IsFact = false },
+                    new Element{ Value= "Rebecca", IsFact = true },
+                    new Element{ Value= "Sammie", IsFact = false },
+                    new Element{ Value= "Mercedeze", IsFact = false },
+                    new Element{ Value= "Chris", IsFact = false }
                 }
             });
 
@@ -57,12 +54,11 @@ namespace RankVotingSolver
                 Id = "Joey",
                 Ranks = new List<Element>
                 {
-                    new Element{Value= "Shubham", IsFact =false},
+                    new Element{Value= "Sammie", IsFact =true},
+                    new Element{Value= "Shubham", IsFact = true},
                     new Element{Value= "Chris", IsFact =false},
-                    new Element{Value= "Miranda", IsFact =true},
-                    new Element{Value= "Rebecca", IsFact =false},
-                    new Element{Value= "Mercedeze", IsFact =false},
-                    new Element{Value= "Sammie", IsFact =false},
+                    new Element{Value= "Ed", IsFact =true},
+                    new Element{Value= "Rebecca", IsFact =false},                    
                 }
             });
 
@@ -72,29 +68,14 @@ namespace RankVotingSolver
                 Id = "Chris",
                 Ranks = new List<Element>
                 {
-                new Element{Value= "Mercedeze", IsFact =true},
+                    new Element{Value= "Joey", IsFact =true},
                     new Element{Value= "Rebecca", IsFact =false},
-                    new Element{Value= "Joey", IsFact =false},
-                    new Element{Value= "Shubham", IsFact =true},
+                    new Element{Value= "Shubham", IsFact =false},
                     new Element{Value= "Sammie", IsFact =false},
-                    new Element{Value= "Miranda", IsFact =false},
+                    new Element{Value= "Ed", IsFact =true},
                 }
             });
 
-            rating.Rankings.Add(
-            new Ranking
-            {
-                Id = "Mercedeze",
-                Ranks = new List<Element>
-                {
-                    new Element{Value= "Chris", IsFact =true},
-                    new Element{Value= "Shubham", IsFact =false},
-                    new Element{Value= "Sammie", IsFact =false},
-                    new Element{Value= "Miranda", IsFact =false},
-                    new Element{Value= "Rebecca", IsFact =true},
-                    new Element{Value= "Joey", IsFact =true}
-                }
-            });
 
             rating.Rankings.Add(
             new Ranking
@@ -103,10 +84,9 @@ namespace RankVotingSolver
                 Ranks = new List<Element> //Sammie
                 {
                     new Element{Value= "Chris", IsFact =false},
-                    new Element{Value= "Rebecca", IsFact =true},
                     new Element{Value= "Joey", IsFact =false},
-                    new Element{Value= "Miranda", IsFact =true},
-                    new Element{Value= "Mercedeze", IsFact =false},
+                    new Element{Value= "Rebecca", IsFact =true},
+                    new Element{Value= "Ed", IsFact =true},
                     new Element{Value= "Shubham", IsFact =false},
                 }
             });
@@ -119,10 +99,9 @@ namespace RankVotingSolver
                 {
                     new Element{Value= "Shubham", IsFact =true},
                     new Element{Value= "Chris", IsFact =false},
-                    new Element{Value= "Joey", IsFact =false},
-                    new Element{Value= "Miranda", IsFact =false},
                     new Element{Value= "Sammie", IsFact =false},
-                    new Element{Value= "Mercedeze", IsFact =false},
+                    new Element{Value= "Joey", IsFact =true},
+                    new Element{Value= "Ed", IsFact =false},
                 }
             });
 
@@ -141,6 +120,7 @@ namespace RankVotingSolver
             int solutionCount = 0;
             foreach (var res in result)
             {
+                solutionCount++;
                 Console.WriteLine($"Solution {solutionCount}");
                 foreach (var item in res.Rankings)
                 {
@@ -161,7 +141,7 @@ namespace RankVotingSolver
         {
             var players = new List<string>
             {
-                "Alana", "Antonio", "Mercedeze", "Rebecca", "Chris", "Sammie", "Shubham", "Joey"
+               "Joey", "Shubham", "Sammie", "Chris", "Rebecca"
             };
 
             var rankDictionary = new Dictionary<string, int>();
