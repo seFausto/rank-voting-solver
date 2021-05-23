@@ -68,7 +68,7 @@ namespace RankVotingSolver
     public class Element
     {
         public string Value { get; set; }
-        public bool IsKnownValue { get; set; }
+        public bool IsFact { get; set; }
     }
 
     public class Ranking
@@ -114,9 +114,9 @@ namespace RankVotingSolver
 
         private void Swap(int startIndex, int swapIndex)
         {
-            if (Ranks[startIndex].IsKnownValue)
+            if (Ranks[startIndex].IsFact)
                 return;
-            if (Ranks[swapIndex].IsKnownValue)
+            if (Ranks[swapIndex].IsFact)
                 return;
 
             var temp = Ranks[startIndex];

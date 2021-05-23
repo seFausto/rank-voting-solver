@@ -9,8 +9,6 @@ namespace RankVotingSolver
     {
         static void Main(string[] args)
         {
-            //GenerateRakings();
-
             var solution = new List<string>
              {
                 "Shubham",
@@ -22,87 +20,81 @@ namespace RankVotingSolver
                 "Mercedeze"
             };
 
-
-
             var rating = new Ratings();
             rating.Rankings.Add(
-                new Ranking
+            new Ranking
+            {
+                Id = "Shubham",
+                Ranks = new List<Element> //shubham
                 {
-                    Id = "Shubham",
-                    Ranks = new List<Element> //shubham
-                    {
-                        new Element{Value= "Joey", IsKnownValue =false},
-                        new Element{Value= "Rebecca", IsKnownValue =false},
-                        new Element{Value= "Sammie", IsKnownValue =true},
-                        new Element{Value= "Mercedeze", IsKnownValue =true},
-                        new Element{Value= "Miranda", IsKnownValue =false},
-                        new Element{Value= "Chris", IsKnownValue =true},
-
-                    }
+                    new Element{Value= "Joey", IsFact =false},
+                    new Element{Value= "Rebecca", IsFact =false},
+                    new Element{Value= "Sammie", IsFact =true},
+                    new Element{Value= "Mercedeze", IsFact =true},
+                    new Element{Value= "Miranda", IsFact =false},
+                    new Element{Value= "Chris", IsFact =true}
                 }
-                );
-            rating.Rankings.Add(
-                new Ranking
-                {
-                    Id = "Miranda",
-                    Ranks = new List<Element>
-                    {
-                        new Element{Value= "Joey", IsKnownValue =true},
-                        new Element{Value= "Shubham", IsKnownValue =false},
-                        new Element{Value= "Sammie", IsKnownValue =true},
-                        new Element{Value= "Rebecca", IsKnownValue =false},
-                        new Element{Value= "Chris", IsKnownValue =false},
-                        new Element{Value= "Mercedeze", IsKnownValue =false},
-                    }
-                }
-                );
-            rating.Rankings.Add(
-                new Ranking
-                {
-                    Id = "Joey",
-                    Ranks = new List<Element>
-                    {
-                        new Element{Value= "Shubham", IsKnownValue =false},
-                        new Element{Value= "Chris", IsKnownValue =false},
-                        new Element{Value= "Miranda", IsKnownValue =true},
-                        new Element{Value= "Rebecca", IsKnownValue =false},
-                        new Element{Value= "Mercedeze", IsKnownValue =false},
-                        new Element{Value= "Sammie", IsKnownValue =false},
-                    }
-                }
-                );
-            rating.Rankings.Add(
-                           new Ranking
-                           {
-                               Id = "Chris",
-                               Ranks = new List<Element>
-                               {
-                        new Element{Value= "Mercedeze", IsKnownValue =true},
-                        new Element{Value= "Rebecca", IsKnownValue =false},
-                        new Element{Value= "Joey", IsKnownValue =false},
-                        new Element{Value= "Shubham", IsKnownValue =true},
-                        new Element{Value= "Sammie", IsKnownValue =false},
-                        new Element{Value= "Miranda", IsKnownValue =false},
-                               }
-                           }
-                           );
+            });
 
             rating.Rankings.Add(
-                        new Ranking
-                        {
-                            Id = "Mercedeze",
-                            Ranks = new List<Element>
-                            {
-                        new Element{Value= "Chris", IsKnownValue =true},
-                        new Element{Value= "Shubham", IsKnownValue =false},
-                        new Element{Value= "Sammie", IsKnownValue =false},
-                        new Element{Value= "Miranda", IsKnownValue =false},
-                        new Element{Value= "Rebecca", IsKnownValue =true},
-                        new Element{Value= "Joey", IsKnownValue =true},
-                        
-                            }
-                        }
-                        );
+            new Ranking
+            {
+                Id = "Miranda",
+                Ranks = new List<Element>
+                {
+                    new Element{Value= "Joey", IsFact =true},
+                    new Element{Value= "Shubham", IsFact =false},
+                    new Element{Value= "Sammie", IsFact =true},
+                    new Element{Value= "Rebecca", IsFact =false},
+                    new Element{Value= "Chris", IsFact =false},
+                    new Element{Value= "Mercedeze", IsFact =false},
+                }
+            });
+
+            rating.Rankings.Add(
+            new Ranking
+            {
+                Id = "Joey",
+                Ranks = new List<Element>
+                {
+                    new Element{Value= "Shubham", IsFact =false},
+                    new Element{Value= "Chris", IsFact =false},
+                    new Element{Value= "Miranda", IsFact =true},
+                    new Element{Value= "Rebecca", IsFact =false},
+                    new Element{Value= "Mercedeze", IsFact =false},
+                    new Element{Value= "Sammie", IsFact =false},
+                }
+            });
+
+            rating.Rankings.Add(
+            new Ranking
+            {
+                Id = "Chris",
+                Ranks = new List<Element>
+                {
+                new Element{Value= "Mercedeze", IsFact =true},
+                    new Element{Value= "Rebecca", IsFact =false},
+                    new Element{Value= "Joey", IsFact =false},
+                    new Element{Value= "Shubham", IsFact =true},
+                    new Element{Value= "Sammie", IsFact =false},
+                    new Element{Value= "Miranda", IsFact =false},
+                }
+            });
+
+            rating.Rankings.Add(
+            new Ranking
+            {
+                Id = "Mercedeze",
+                Ranks = new List<Element>
+                {
+                    new Element{Value= "Chris", IsFact =true},
+                    new Element{Value= "Shubham", IsFact =false},
+                    new Element{Value= "Sammie", IsFact =false},
+                    new Element{Value= "Miranda", IsFact =false},
+                    new Element{Value= "Rebecca", IsFact =true},
+                    new Element{Value= "Joey", IsFact =true}
+                }
+            });
 
             rating.Rankings.Add(
             new Ranking
@@ -110,36 +102,32 @@ namespace RankVotingSolver
                 Id = "Sammie",
                 Ranks = new List<Element> //Sammie
                 {
-                        new Element{Value= "Chris", IsKnownValue =false},
-                        new Element{Value= "Rebecca", IsKnownValue =true},
-                        new Element{Value= "Joey", IsKnownValue =false},
-                        new Element{Value= "Miranda", IsKnownValue =true},
-                        new Element{Value= "Mercedeze", IsKnownValue =false},
-                        new Element{Value= "Shubham", IsKnownValue =false},
+                    new Element{Value= "Chris", IsFact =false},
+                    new Element{Value= "Rebecca", IsFact =true},
+                    new Element{Value= "Joey", IsFact =false},
+                    new Element{Value= "Miranda", IsFact =true},
+                    new Element{Value= "Mercedeze", IsFact =false},
+                    new Element{Value= "Shubham", IsFact =false},
                 }
-            }
-            );
+            });
 
             rating.Rankings.Add(
-           new Ranking
-           {
-               Id = "Rebecca",
-               Ranks = new List<Element>
-               {
-                        new Element{Value= "Shubham", IsKnownValue =true},
-                        new Element{Value= "Chris", IsKnownValue =false},
-                        new Element{Value= "Joey", IsKnownValue =false},
-                        new Element{Value= "Miranda", IsKnownValue =false},
-                        new Element{Value= "Sammie", IsKnownValue =false},
-                        new Element{Value= "Mercedeze", IsKnownValue =false},
-               }
-           }
-           );
+            new Ranking
+            {
+                Id = "Rebecca",
+                Ranks = new List<Element>
+                {
+                    new Element{Value= "Shubham", IsFact =true},
+                    new Element{Value= "Chris", IsFact =false},
+                    new Element{Value= "Joey", IsFact =false},
+                    new Element{Value= "Miranda", IsFact =false},
+                    new Element{Value= "Sammie", IsFact =false},
+                    new Element{Value= "Mercedeze", IsFact =false},
+                }
+            });
 
 
             var rankSolver = new RankSolver(solution, rating);
-
-
             var result = rankSolver.Solve();
 
             Console.WriteLine("Possible configurations for solution");
@@ -150,9 +138,10 @@ namespace RankVotingSolver
                 count++;
             }
 
+            int solutionCount = 0;
             foreach (var res in result)
             {
-                Console.WriteLine("Solution 1");
+                Console.WriteLine($"Solution {solutionCount}");
                 foreach (var item in res.Rankings)
                 {
                     Console.WriteLine($"Ranks for {item.Id}");
