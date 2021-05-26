@@ -24,13 +24,13 @@ namespace RankVotingSolver
             new Ranking
             {
                 Id = "Ed",
-                Ranks = new List<Element> //shubham
+                Ranks = new List<Element>
                 {
                     new Element{Value= "Joey", IsFact =false},
                     new Element{Value= "Chris", IsFact =true},
                     new Element{Value= "Shubham", IsFact =false},
                     new Element{Value= "Sammie", IsFact =true},
-                    new Element{Value= "Ed", IsFact =false}
+                    new Element{Value= "Mercedeze", IsFact =false}
                 }
             });
 
@@ -38,7 +38,7 @@ namespace RankVotingSolver
             new Ranking
             {
                 Id = "Shubham",
-                Ranks = new List<Element> //shubham
+                Ranks = new List<Element>
                 {
                     new Element{ Value= "Joey", IsFact = false },
                     new Element{ Value= "Rebecca", IsFact = true },
