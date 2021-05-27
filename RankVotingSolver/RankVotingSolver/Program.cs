@@ -9,6 +9,11 @@ namespace RankVotingSolver
     {
         static void Main(string[] args)
         {
+            GenerateRakings();
+        }
+
+        private static void MainTest()
+        {
             var solution = new List<string>
              {
                "Joey",
@@ -58,7 +63,7 @@ namespace RankVotingSolver
                     new Element{Value= "Shubham", IsFact = true},
                     new Element{Value= "Chris", IsFact =false},
                     new Element{Value= "Ed", IsFact =true},
-                    new Element{Value= "Rebecca", IsFact =false},                    
+                    new Element{Value= "Rebecca", IsFact =false},
                 }
             });
 
@@ -133,15 +138,13 @@ namespace RankVotingSolver
                     }
                 }
             }
-
-
         }
 
         private static void GenerateRakings()
         {
             var players = new List<string>
             {
-               "Joey", "Shubham", "Sammie", "Chris", "Rebecca"
+               "Joey", "Shubham", "Sammie", "Chris"
             };
 
             var rankDictionary = new Dictionary<string, int>();
@@ -151,13 +154,25 @@ namespace RankVotingSolver
                 rankDictionary.Add(item, 0);
             }
 
-            var votes = new List<List<string>>();
-
-            for (int i = 0; i < 8; i++)
+            var votes = new List<List<string>>
             {
-                var vote = players.Shuffle();
-                votes.Add(vote);
-            }
+                new List<string>
+                {
+                    "Shubham","Sammie","Chris"
+                },
+                new List<string>
+                {
+                    "Joey","Sammie","Shubham"
+                },
+                new List<string>
+                {
+                    "Joey","Chris","Sammie"
+                },
+                new List<string>
+                {
+                    "Joey","Chris","Shubham"
+                },
+            };
 
             //calculate votes
             foreach (var vote in votes)
